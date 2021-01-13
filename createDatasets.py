@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import os
 import cv2
 import random
@@ -73,15 +72,9 @@ for trainingSample in testData:
     y_test.append([trainingSample[1], trainingSample[2], trainingSample[3], trainingSample[4]])
 
 X_train = np.array(X_train).reshape(-1, RESIZE_IMG_SIZE, RESIZE_IMG_SIZE, 3)
-# y_train_id = np.array(y_train_id).reshape(-1,)
-# y_train_eth = np.array(y_train_eth).reshape(-1,)
-# y_train_gend = np.array(y_train_gend).reshape(-1,)
 y_train = np.array(y_train)
 
 X_test = np.array(X_test).reshape(-1, RESIZE_IMG_SIZE, RESIZE_IMG_SIZE, 3)
-# y_test_id = np.array(y_test_id).reshape(-1,)
-# y_test_eth = np.array(y_test_eth).reshape(-1,)
-# y_test_gend = np.array(y_test_gend).reshape(-1,)
 y_train = np.array(y_train)
 
 pickle_out = open("datasets/X_train.pickle", "wb")
@@ -90,12 +83,6 @@ pickle_out.close()
 pickle_out = open("datasets/y_train.pickle", "wb")
 pickle.dump(y_train, pickle_out)
 pickle_out.close()
-# pickle_out = open("datasets/y_train_eth.pickle", "wb")
-# pickle.dump(y_train_eth, pickle_out)
-# pickle_out.close()
-# pickle_out = open("datasets/y_train_gend.pickle", "wb")
-# pickle.dump(y_train_gend, pickle_out)
-# pickle_out.close()
 
 
 pickle_out = open("datasets/X_test.pickle", "wb")
@@ -104,9 +91,3 @@ pickle_out.close()
 pickle_out = open("datasets/y_test.pickle", "wb")
 pickle.dump(y_test, pickle_out)
 pickle_out.close()
-# pickle_out = open("datasets/y_test_eth.pickle", "wb")
-# pickle.dump(y_test_eth, pickle_out)
-# pickle_out.close()
-# pickle_out = open("datasets/y_test_gend.pickle", "wb")
-# pickle.dump(y_test_gend, pickle_out)
-# pickle_out.close()
